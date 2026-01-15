@@ -1,15 +1,26 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: dwk-material-ingress
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: hashresponse-svc
-            port:
-              number: 2345
+# Declare that it should be an Ingress
+# And route all traffic to our service
+
+# If you've got your OSI model (opens in a new tab) memorized,
+# it works in layer 7 while services work on layer 4.
+# You could see these used together:
+# first the aforementioned LoadBalancer and then Ingress to handle routing.
+# In our case, as we don't have a load balancer available we
+# can use the Ingress as the first stop. If you're familiar with
+# reverse proxies like Nginx, Ingress should seem familiar.
+
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: dwk-material-ingress
+#spec:
+#  rules:
+#  - http:
+#      paths:
+#      - path: /
+#        pathType: Prefix
+#        backend:
+#          service:
+#            name: hashresponse-svc
+#            port:
+#              number: 2345
