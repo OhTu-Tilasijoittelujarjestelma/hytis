@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:20
 WORKDIR /usr/src/app/frontend
 
 # Install the application dependencies
@@ -6,6 +6,8 @@ COPY package* ./
 RUN npm ci
 # Copy in the source code
 COPY . .
+
+RUN chmod -R 777 *
 
 RUN npm run build
 
