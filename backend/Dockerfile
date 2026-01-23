@@ -1,16 +1,20 @@
-FROM ubuntu:latest
-WORKDIR /usr/local/app
+FROM node:20
+WORKDIR /usr/src/app/backend
 
 # Install the application dependencies
-# Depends on language WIP
-
+COPY package* ./
+RUN npm ci
 # Copy in the source code
 COPY . .
 # Expose port WIP
 EXPOSE 3000
 
+RUN chmod -R 777 *
+
+
 # Setup an app user so the container doesn't run as the root user
 RUN useradd app
 USER app
 
-CMD [ "npm" ]
+CMD [ "npm", "run", "start"]
+#CMD ["bash"]
