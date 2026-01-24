@@ -1,20 +1,15 @@
-FROM node:20
-WORKDIR /usr/src/app/backend
+FROM node:alpine
 
-# Install the application dependencies
-COPY package* ./
+WORKDIR /app
+
+COPY package*.json ./
+
 RUN npm ci
-# Copy in the source code
+
 COPY . .
-# Expose port WIP
+
 EXPOSE 3000
 
-RUN chmod -R 777 *
+RUN npm run tsc
 
-
-# Setup an app user so the container doesn't run as the root user
-RUN useradd app
-USER app
-
-CMD [ "npm", "run", "start"]
-#CMD ["bash"]
+CMD ["node", "build/index.js"]
