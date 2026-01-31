@@ -7,7 +7,7 @@ function MainView() {
   const [activeRoomId, setActiveRoomId] = useState<string | null>(null);
 
   useEffect(() => {
-    const rooms = document.querySelectorAll("path[id]");
+    const rooms = document.querySelectorAll("path[data-room]");
     rooms.forEach((room) => {
       room.classList.add("room");
       room.classList.toggle("active", room.id === activeRoomId);
@@ -29,7 +29,7 @@ function MainView() {
 
   async function handleClick(event: React.MouseEvent<SVGSVGElement>) {
     if (event.target instanceof SVGElement) {
-      const target = event.target.closest("path[id]");
+      const target = event.target.closest("path[data-room]");
       if (target?.id) {
         console.log("Clicked room with id:", target.id);
         await findRoom(target.id);
