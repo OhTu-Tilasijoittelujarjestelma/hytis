@@ -1,3 +1,4 @@
+import { AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 import Exactum2 from "../assets/exactum-2.svg?react";
 import { findRoomById } from "../services/roomsService";
@@ -44,9 +45,11 @@ function MainView() {
   return (
     <div className="wrapper">
       <Exactum2 className="floor-image" onClick={handleClick} />
-      {isRoomDetailsOpen && (
-        <RoomDetails handleClose={() => setIsRoomDetailsOpen(false)} />
-      )}
+      <AnimatePresence>
+        {isRoomDetailsOpen && (
+          <RoomDetails handleClose={() => setIsRoomDetailsOpen(false)} />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
