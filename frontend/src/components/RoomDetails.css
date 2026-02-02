@@ -12,14 +12,14 @@
   gap: 32px;
 }
 
-.close-room-details {
+.room-details-close-button {
   position: absolute;
   right: 8px;
   cursor: pointer;
   fill: oklch(12.9% 0.042 264.695);
 }
 
-.room-header {
+.room-details-header {
   width: 100%;
   position: relative;
   display: flex;
@@ -27,12 +27,12 @@
   justify-content: center;
 }
 
-.room-title {
+.room-details-title {
   margin: 0;
   color: oklch(12.9% 0.042 264.695);
 }
 
-.room-avatar {
+.room-details-avatar {
   width: 180px;
   height: 180px;
   border-radius: calc(infinity * 1px);
@@ -42,7 +42,7 @@
   justify-content: center;
 }
 
-.room-name {
+.room-details-avatar-name {
   font-size: 2rem;
   font-weight: 600;
   color: white;

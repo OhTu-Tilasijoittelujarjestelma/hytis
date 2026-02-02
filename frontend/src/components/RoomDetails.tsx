@@ -22,12 +22,12 @@ function RoomDetails({
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="room-details"
     >
-      <header className="room-header">
-        <h1 className="room-title">Huone</h1>
-        <X className="close-room-details" onClick={handleClose} />
+      <header className="room-details-header">
+        <h1 className="room-details-title">Huone</h1>
+        <X className="room-details-close-button" onClick={handleClose} />
       </header>
-      <div className="room-avatar">
-        <h2 className="room-name">{room.name}</h2>
+      <div className="room-details-avatar">
+        <h2 className="room-details-avatar-name">{room.name}</h2>
       </div>
     </motion.div>
   );
