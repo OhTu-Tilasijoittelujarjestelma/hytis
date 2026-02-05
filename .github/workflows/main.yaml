@@ -18,10 +18,10 @@
 
   jobs:
     frontend:
-      uses: ./.github/workflows/frontend.yaml@${{ github.ref }}
+      uses: ./.github/workflows/frontend.yaml
 
     backend:
-      uses: ./.github/workflows/backend.yaml@${{ github.ref }}
+      uses: ./.github/workflows/backend.yaml
       secrets:
         SECRET: ${{ secrets.SECRET }}
 
