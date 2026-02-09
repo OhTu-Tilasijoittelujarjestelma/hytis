@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  lint:
+  lint: #also builds
     runs-on: ubuntu-24.04
     defaults:
       run:
