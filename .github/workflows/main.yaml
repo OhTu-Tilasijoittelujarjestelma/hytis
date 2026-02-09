@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - dev
-    #paths:
+    #paths: This braks the file. I dont know why
     #  - 'frontend/**'
     #  - 'backend/**'
   pull_request:
