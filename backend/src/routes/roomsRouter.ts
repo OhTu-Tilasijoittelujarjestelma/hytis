@@ -7,8 +7,8 @@ router.get(
   "/:id",
   async (
     req: Request<{ id: string }>,
-    res: Response,
-  ): Promise<Response<Room>> => {
+    res: Response<Room | { error: string }>,
+  ): Promise<Response<Room | { error: string }>> => {
     const room = await Room.findByPk(req.params.id, {
       attributes: ["id", "name", "area"],
       include: [
