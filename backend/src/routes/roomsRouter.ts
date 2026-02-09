@@ -3,6 +3,11 @@ import { Contract, Department, Person, Room, Title } from "../models";
 
 const router = Router();
 
+/**
+ * GET /api/rooms/:id
+ * Returns room details with associated contracts and personnel information
+ * Returns 404 if room not found
+ */
 router.get(
   "/:id",
   async (
