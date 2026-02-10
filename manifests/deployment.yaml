@@ -4,21 +4,21 @@ metadata:
   annotations:
     alpha.image.policy.openshift.io/resolve-names: "*"
     image.openshift.io/triggers: >-
-      [{"from":{"kind":"ImageStreamTag","name":"sijoittaja-backend:staging","namespace":"ohtuprojekti-staging"},"fieldPath":"spec.template.spec.containers[?(@.name==\"sijoittaja-backend\")].image","pause":"false"}]
-  name: sijoittaja-backend-dep
+      [{"from":{"kind":"ImageStreamTag","name":"hytis:staging","namespace":"ohtuprojekti-staging"},"fieldPath":"spec.template.spec.containers[?(@.name==\"hytis\")].image","pause":"false"}]
+  name: hytis-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sijoittaja-backend
+      app: hytis
   template:
     metadata:
       labels:
-        app: sijoittaja-backend
+        app: hytis
     spec:
       containers:
-        - name: sijoittaja-backend
-          image: sijoittaja-backend:staging
+        - name: hytis
+          image: hytis:staging
           ports:
             - containerPort: 3000
           env:
