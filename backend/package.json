@@ -11,7 +11,8 @@
     "dev": "ts-node-dev src/index.ts",
     "lint": "eslint .",
     "start": "node build/src/index.js",
-    "test": "tsx --test"
+    "test": "tsx --test",
+    "coverage": "tsx --experimental-test-coverage --test"
   },
   "author": "tilasijoittelija-tiimi",
   "license": "MIT",
