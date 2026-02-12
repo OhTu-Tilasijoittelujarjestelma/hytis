@@ -15,6 +15,8 @@
     "build:frontend": "npm run build --prefix frontend",
     "lint:frontend": "npm run lint --prefix frontend",
     "preview:frontend": "npm run preview --prefix frontend",
+    "test:e2e": "playwright test",
+    "test:e2e-report": "playwright show-report",
     "test:backend": "npm run test --prefix backend",
     "test:frontend": "npm run test --prefix frontend",
     "coverage:frontend": "npm run coverage --prefix frontend"
@@ -28,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/OhTu-Tilasijoittelujarjestelma/Sijoittaja/issues"
   },
-  "homepage": "https://github.com/OhTu-Tilasijoittelujarjestelma/Sijoittaja#readme"
+  "homepage": "https://github.com/OhTu-Tilasijoittelujarjestelma/Sijoittaja#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.2"
+  }
 }
