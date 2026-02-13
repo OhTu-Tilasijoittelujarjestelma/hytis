@@ -57,11 +57,11 @@ jobs:
     - name: Install dependencies
       run: npm ci
     #- name: Run database migrations
-    #  env:
-    #    DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
+      env:
+        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
     #  run: npx prisma migrate deploy
     - name: Run tests
-      env:
-        #DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
-        SECRET: ${{ secrets.SECRET }}
+      #env:
+      #  #DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
+      #  SECRET: ${{ secrets.SECRET }}
       run: npm run test
