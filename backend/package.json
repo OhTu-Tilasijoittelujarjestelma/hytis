@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "type": "module",
-  "description": "tilasijoittelu backend",
+  "description": "hytis backend",
   "main": "index.js",
   "scripts": {
     "start:db": "docker compose -f database.yaml up",
@@ -13,7 +13,7 @@
     "start": "node build/src/index.js",
     "test": "tsx --test"
   },
-  "author": "tilasijoittelija-tiimi",
+  "author": "hytis-tiimi",
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.39.2",
