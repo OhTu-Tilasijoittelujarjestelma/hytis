@@ -1,9 +1,9 @@
 import { useEffect, useState, type ReactNode } from "react";
 import * as authService from "../services/authService";
 import { AuthContext } from "../contexts/AuthContext";
-import type { AuthContextType, UserData } from "../types/auth";
+import type { UserData } from "../types/auth";
 
-export function AuthProvider({ children }: { children: ReactNode }) {
+function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<UserData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [needsLogin, setNeedsLogin] = useState(false);
@@ -43,3 +43,5 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     </AuthContext.Provider>
   );
 }
+
+export default AuthProvider;
